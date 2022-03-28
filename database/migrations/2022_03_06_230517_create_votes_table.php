@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->id();
+            $table->unique(['location_id', 'user_id']);
+            $table->foreignId('location_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained();
-            $table->string('image');
-            $table->string('latitude')->nullable();
-            $table->string('longitude')->nullable();
-            $table->string('notes')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('votes');
     }
 };

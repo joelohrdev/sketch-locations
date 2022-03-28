@@ -179,6 +179,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
+
     ],
 
     /*
@@ -193,7 +195,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
     ])->toArray(),
 
 ];

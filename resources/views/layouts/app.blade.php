@@ -17,6 +17,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -42,5 +43,6 @@
         @stack('modals')
 
         @livewireScripts
+        <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
     </body>
 </html>
